@@ -21,7 +21,7 @@ jobs:
         run: docker-compose up --build -d
 
       - name: Run some tests in the container
-        run: docker exec --user mathesar mathesar_service_1 sh -c "id && pwd && ls -la && ls -la /home/mathesar/code/ && ls -ld /home/mathesar/code/"
+        run: docker exec --user 1001 mathesar_service_1 sh -c "id && pwd && ls -la && ls -la /home/mathesar/code/ && ls -ld /home/mathesar/code/"
 
       - name: Run tests with pytest
         run: docker exec --user 1001 mathesar_service_1 pytest
